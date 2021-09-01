@@ -59,14 +59,13 @@ step1StringBody = """             STEP ONE
 #define engine list
 
 engineList = """
-	ENGINES
-	
-	1. E62
-	2. E15
-	3. E54
-	"""
-	
+        ENGINES
 
+        1. E62 
+        2. E15
+        3. E54
+        4. E122
+        """
 
 
 
@@ -165,6 +164,11 @@ eng92info = infoTemplate.substitute(company= 'E92', house = 'Engine 92',  addres
 
 eng15info = infoTemplate.substitute(company= 'E15', house = 'Engine 15',  address = '8026 S Kedzie AVE', type = "Engine")
 
+#define eng122 info
+
+eng122info = infoTemplate.substitute(company= 'E122', house = 'Engine 122',  address = '101 E 79th ST', type = "Engine")
+
+
 #define trk27 info
 
 t27info = infoTemplate.substitute(company= 'T27', house = 'Engine 62',  address = '34 E 114th ST', type = "Truck")
@@ -197,7 +201,7 @@ batt22info = infoTemplate.substitute(company= 'BC22', house = 'Engine 62',  addr
 
 amb17info = infoTemplate.substitute(company= 'AMB17', house = 'Engine 92',  address = '3112 W 111th st', type = "Ambulance")
 
-#define BC19 info
+#define ambulance 24 info
 
 amb24info = infoTemplate.substitute(company= 'AMB24', house = 'Engine 122',  address = '101 E 79th ST', type = "Ambulance")
 
@@ -238,6 +242,8 @@ if(stepOneChoice == '1'):
                         print(lineHeader + eng15info + lineSpacer)
                     elif(engListChoice == '3'):
                         print(lineHeader + eng54info + lineSpacer)
+                    elif(engListChoice == '4'):
+                        print(lineHeader + eng122info + lineSpacer)
 elif(stepOneChoice == '2'):
                 print(lineHeader + stepTwoHeader + truckList + lineFooter)
                 truckListChoice = input()
